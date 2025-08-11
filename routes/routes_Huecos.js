@@ -1,5 +1,5 @@
 import { Router } from "express"
-import {crearHueco,getAllHuecos,getHuecoByDir,getHuecoByDirClose,updateHueco,deleteHueco,getHuecoById}  from "../controller/controller_Huecos.js"
+import {crearHueco,getAllHuecos,getHuecoByDir,getHuecoByDirParams,getHuecoByDirClose,updateHueco,deleteHueco,getHuecoById}  from "../controller/controller_Huecos.js"
 
 const router = Router()
 
@@ -7,7 +7,8 @@ const router = Router()
 router.post("/", crearHueco)
 router.get("/",getAllHuecos)
 router.get("/direc",getHuecoByDir)
-router.get("/direc/:dir",getHuecoByDirClose )
+router.get("/direc/:dir",getHuecoByDirParams)
+router.get("/direcSearch/:dir",getHuecoByDirClose )
 router.get("/:id",getHuecoById )
 router.put("/:id",updateHueco)
 router.delete("/:id",deleteHueco)

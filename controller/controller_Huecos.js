@@ -33,6 +33,7 @@ const crearHueco = async (req, res) => {
         return res.status(201).json(pokemon)*/
 
     } catch (error) {
+        console.log(error)
         return res.status(500).json(error.message)
     }
 }
@@ -42,6 +43,7 @@ const getAllHuecos = async (req, res) => {
         const huecos = await huecoModel.find()
         return res.status(200).json(huecos)
     } catch (error) {
+        console.log(error)
         return (res.status(500).json(error))
     }
 }
@@ -54,14 +56,28 @@ const getHuecoByDir = async (req, res) => {
         }
         return res.status(200).json(hueco)
     } catch (error) {
+        console.log(error)
+        return res.status(500).json(error)
+    }
+}
+const getHuecoByDirParams = async (req, res) => {
+    try {
+        const dir = req.params.dir
+        const hueco = await huecoModel.findOne({ direccion: dir })
+        if (!hueco) {
+            return res.status(404).json({ message: `No existen huecos en ${dir}` })
+        }
+        return res.status(200).json(hueco)
+    } catch (error) {
+        console.log(error)
         return res.status(500).json(error)
     }
 }
 const getHuecoByDirClose = async (req, res) => {
     try {
         const { dir } = req.params
-        // Crear una expresión regular que coincida con direcciones que comiencen con el texto
         /* 
+        Crear una expresión regular que coincida con direcciones que comiencen con el texto
         ^cra 100: comienza con cra100
         100 : contiene 100
         ^cra: comienza con cra 
@@ -98,6 +114,7 @@ const updateHueco = async (req, res) => {
         }
         return res.status(200).json({ message: "Ok", result })
     } catch (error) {
+        console.log(error)
         return res.status(500).json(error)
     }
 }
@@ -116,4 +133,4 @@ const deleteHueco = async (req, res) => {
     }
 }
 
-export { crearHueco, getAllHuecos, getHuecoByDir, getHuecoById,getHuecoByDirClose, updateHueco, deleteHueco }
+export { crearHueco, getAllHuecos, getHuecoByDir,getHuecoByDirParams, getHuecoById,getHuecoByDirClose, updateHueco, deleteHueco }

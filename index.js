@@ -8,6 +8,7 @@ dotenv.config()
 const app= express()
 const PORT= process.env.PORT || 3006
 app.set('port', PORT)
+app.use(cors())
 //PRIMERO USE JSON 
 app.use(express.json())
 //DESPUES RUTAS
@@ -16,7 +17,6 @@ app.use("/api/huecos/",Rutas_Huecos)
     res.send("hello world")
 })*/
 
-app.use(cors)
 mongoose.connect(process.env.MONGODB_URI,)
 .then(()=>console.log("connected to db"))
 .catch((err)=>console.log(err.message))
