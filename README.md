@@ -61,6 +61,7 @@ http://localhost:3005
 ```
 
 ## 📌 Endpoints principales
+
 ```bash
 GET /api/huecos → Obtiene todos los huecos.
 
