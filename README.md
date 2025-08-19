@@ -1,6 +1,3 @@
-# 📌 README para el **Backend**
-
-```markdown
 # ⚙ Backend - Reporte de Huecos en Cali
 
 Este repositorio contiene el **backend** de la aplicación web para reportar y buscar huecos en la ciudad de Cali.  
