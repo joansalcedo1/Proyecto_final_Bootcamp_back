@@ -55,10 +55,11 @@ npm start
 ```
 El backend estará disponible en:
 
-````bash
+```bash
 
 http://localhost:3005
 ```
+
 ## 📌 Endpoints principales
 GET /api/huecos → Obtiene todos los huecos.
 
