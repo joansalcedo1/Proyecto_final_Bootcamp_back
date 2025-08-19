@@ -61,6 +61,7 @@ http://localhost:3005
 ```
 
 ## 📌 Endpoints principales
+```bash
 GET /api/huecos → Obtiene todos los huecos.
 
 POST /api/huecos → Crea un nuevo reporte de hueco.
@@ -68,8 +69,9 @@ POST /api/huecos → Crea un nuevo reporte de hueco.
 GET /api/huecos/:id → Obtiene los detalles de un hueco específico.
 
 GET /api/huecos/search/:direccion → Busca huecos por calle o carrera.
+```
 
-##🎯 Objetivo
+## 🎯 Objetivo
 Conectar el frontend con la base de datos.
 
 Proveer una API REST para manejar los reportes de huecos en la ciudad de Cali.
